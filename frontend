@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Market Maven</title>
+	<link rel="stylesheet" href="style.css">
+	<script defer src="https://pyscript.net/releases/2022.12.1/pyscript.js"></script>
+</head>
+<body>
+	<!-- Header section -->
+	<header class="header">
+		<h1>Market Maven</h1>
+		<input type="search" class="search-bar" placeholder="Search for products...">
+        <button class="btn"><a href="#">Search</a></button>
+	</header>
+	
+	<!-- Categories section -->
+	<nav>
+		<div class="category-row">
+			<ul class="categories">
+				<li><a href="#" class="fruits">Fruits</a></li>
+                <button><a href="categories.html">click here></a></button>
+				<li><a href="#" class="vegetables">Vegetables</a></li>
+                <button><a href="vegcat.html">click here></a></button>
+			</ul>
+		</div>
+		<div class="category-row">
+			<ul class="categories">
+				<li><a href="#" class="Oils">Oils</a></li>
+                <button><a href="oils.html">click here></a></button>
+				<li><a href="#" class="beverages">Beverages</a></li>
+                <button><a href="bevcat.html">click here></a></button>
+			</ul>
+        </div>
+        <div class="category-row">
+            <ul class="categories">
+                <li><a href="#" class="grains">Grains</a></li>
+                <button><a href="grains.html">click here></a></button>
+                <li><a href="#" class="cereals">Cereals</a></li>
+                <button><a href="cereals.html">click here></a></button>
+            </ul>
+		</div>
+		<div class="category-row">
+			<ul class="categories">
+				<li><a href="#" class="Spices">Spices</a></li>
+                <button><a href="spicecat.html">click here></a></button>
+			</ul>
+		</div>
+	</nav>
+	
+	<!-- Main content section (empty for now) -->
+	<main>
+		<!-- Add your main content here -->
+		<py-script src="./main.py"></py-script>
+	</main>
+	
+	<!-- Footer section -->
+	<footer class="footer">
+		<p>&copy; 2024 Market Maven. All rights reserved.</p>
+	</footer>
+	
+	<!-- Add some animations to the search bar -->
+	<script src="script.js"></script>
+</body>
+</html>
+
+
+/* style.css */
+body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f7f7f7; /* light gray background */
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Ffree-photos-vectors%2Fgrocery-background&psig=AOvVaw2n7ufLFS7JQ_DUsoCUYQR8&ust=1717843464415000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCKjv4NqnyYYDFQAAAAAdAAAAABAE');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header {
+	background-color: #9aeff2; /* dark gray header */
+	color: #020000; /* white text */
+	padding: 20px;
+	text-align: center;
+}
+
+.search-bar {
+	width: 50%;
+	padding: 10px;
+	font-size: 18px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	transition: width 0.5s ease-in-out;
+	background-color: #fff; /* white search bar */
+}
+
+.search-bar:focus {
+	width: 70%;
+}
+
+.categories {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+    cursor: pointer;
+    transition: .4s ease;
+}
+
+.categories li {
+	margin-right: 20px;
+	margin-bottom: 20px;
+    transition: .3s ease;
+}
+
+.categories li a {
+	color: #000407; /* blue links */
+	text-decoration: none;
+}
+
+.categories li a:hover {
+	color: #23527c; /* darker blue on hover */
+}
+
+.category-row {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+
+.footer {
+	background-color: #333; /* dark gray footer */
+	color: #fff; /* white text */
+	padding: 10px;
+	text-align: center;
+}
+
+/* Add some colors to the categories */
+.fruits{
+	color: #8bc34a; /* green */
+}
+
+.vegetables {
+	color: #4caf50; /* green */
+}
+
+.oils {
+	color: #ff9800; /* orange */
+}
+
+.spices {
+	color: #9c27b0; /* purple */
+}
+
+.bakery {
+	color: #e5d8b6; /* brown */
+}
+
+.pantry {
+	color: #9e9e9e; /* gray */
+}
+
+.beverages {
+	color: #03a9f4; /* blue */
+}
+
+.snacks {
+	color: #ff69b4; /* pink */
+}
+
+.personal-care {
+	color: #8e44ad; /* purple */
+}
+
+/* Add some animations to the categories */
+.categories li {
+	opacity: 0;
+	animation: fadeIn 1s ease-in-out forwards;
+	animation-delay: 0.5s;
+}
+
+.categories li:nth-child(2n) {
+	animation-delay: 1s;
+}
+
+.categories li:nth-child(3n) {
+	animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
+<!-- categories.html -->
+
+<!-- fresh-fruits.html -->
+
+<div class="category">
+    <h3>Fresh Fruits</h3>
+    <ul>
+        <li><a ref="apples">Apples</a></li>
+        <button><a href="apple.py">click here></a></button>
+        <li><a ref="bananas">Bananas</a></li>
+        <button><a href="bananas.py">click here></a></button>
+        <li><a ref="oranges">Oranges</a></li>
+        <button><a href="oranges.py">click here></a></button>
+        <li><a ref="mangoes">Mangoes</a></li>
+        <button><a href="mangoes.py">click here></a></button>
+        <li><a ref="watermelon">Watermelon</a></li>
+        <button><a href="watermelon.py">click here></a></button>
+        <li><a ref="papaya">Papaya</a></li>
+        <button><a href="papaya.py">click here></a></button>
+        <li><a ref="grapes">Grapes</a></li>
+        <button><a href="grapes.py">click here></a></button>
+    </ul>
+    <h3>Dry fruits</h3>
+    <ul>
+        <li><a ref="almonds">Almonds</a></li>
+        <button><a href="almonds.py">click here></a></button>
+        <li><a ref="cashew">Cashew</a></li>
+        <button><a href="cashew.py">click here></a></button>
+        <li><a ref="pista">Pista</a></li>
+        <button><a href="pista.py">click here></a></button>
+        <li><a ref="dates">Dates</a></li>
+        <button><a href="dates.py">click here></a></button>
+    </ul>
+</div>
+
+
+<div class="oils">
+    <h3>Oils</h3>
+    <ul>
+        <li><a ref="Coconut oil">Coconut oil</a></li>
+        <button><a ref="Coconut oil.py">click here></a></button>
+        <li><a href="Sunflower oil">Sunflower oil</a></li>
+        <button><a href="Sunflower oil.py">click here></a></button>
+        <li><a ref="Mustard oil">Mustard oil</a></li>
+        <button><a href="Mustard oil.py">click here></a></button>
+        <li><a ref="Groundnut oil">Groundnut oil</a></li>
+        <button><a href="Groundnut.py">click here></a></button>
+    </ul>
+</div>
+
+
+<div class="beverages">
+    <h3>Beverages</h3>
+    <ul>
+        <li><a ref="Tea">Tea</a></li>
+        <button><a href="Tea.py">click here></a></button>
+        <li><a ref="Coffee">Coffee</a></li>
+        <button><a href="Coffee.py">click here></a></button>
+    </ul>
+</div>
+
+
+<div class="cereals">
+    <h3>Cereals</h3>
+    <ul>
+        <li><a ref="Rice">Rice</a></li>
+        <button><a href="Rice.py">click here></a></button>
+        <li><a ref="Wheat">Wheat</a></li>
+        <button><a href="main.py">click here></a></button>
+    </ul>
+</div>
+
+
+<div class="cereals">
+    <h3>Cereals</h3>
+    <ul>
+        <li><a ref="Channa dal">Channa dal</a></li>
+        <button><a href="Channadal.py">click here></a></button>
+        <li><a ref="Masoor dal">Masoor dal</a></li>
+        <button><a href="Masoordal.py">click here></a></button>
+        <li><a ref="Tur dal">Tur dal</a></li>
+        <button><a href="Turdal.py">click here></a></button>
+        <li><a ref="Moong dal">Moong dal</a></li>
+        <button><a href="Moongdal.py">click here></a></button>
+    </ul>
+</div>
+
+
+<div class="spices">
+    <h3>Spices</h3>
+    <ul>
+        <li><a ref="Cardamom">Cardamom</a></li>
+        <button><a href="Cardamom.py">click here></a></button>
+        <li><a ref="Turmeric">Turmeric</a></li>
+        <button><a href="Turmeric.py">click here></a></button>
+        <li><a ref="Clove">Clove</a></li>
+        <button><a href="Clove.py">click here></a></button>
+        <li><a ref="Cinnamon">Cinnamon</a></li>
+        <button><a href="Cinnamon.py">click here></a></button>
+        <li><a ref="Pepper">Pepper</a></li>
+        <button><a href="Pepper.py">click here></a></button>
+    </ul>
+</div>
