@@ -1,0 +1,336 @@
+import requests
+from bs4 import BeautifulSoup
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
+
+def wheat():
+    wheat_url = "https://commodityonline.com/requirement/seller/normal-wheat-for-sale-in-raebareli/134269"
+    wheat_response = requests.get(wheat_url, headers=headers)
+    soup = BeautifulSoup(wheat_response.content, "html.parser")
+    wheat_price = soup.find("div", class_="c_details_40")
+    if wheat_price:
+        wp = wheat_price.get_text(strip=True)
+        print(wp)
+        wp2 = int(wp[11:13])
+        if(20<wp2>30):
+            print("purchase for today")
+        elif(wp2<20):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Price information not found.")
+
+
+def orange():
+    orange_url = "https://commodityonline.com/requirement/seller/other-carrot-for-sale-in-maharajganj/120233"
+    orange_response = requests.get(orange_url, headers=headers)
+    soup = BeautifulSoup(orange_response.content, "html.parser")
+    orange_price = soup.find("div", class_="c_details_40")
+    if orange_price:
+        op = orange_price.get_text(strip=True)
+        print(op)
+        wp2 = int(op[11:13])
+        if(80<wp2>85):
+            print("purchase for today")
+        elif(wp2<80):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+        
+    else:
+        print("Not available")
+
+def apple():
+    apple_url = "https://commodityonline.com/requirement/seller/kashmiri-apple-for-sale-in-central-delhi/128195"
+    apple_response = requests.get(apple_url, headers=headers)
+    soup = BeautifulSoup(apple_response.content, "html.parser")
+    apple_price = soup.find("div", class_="c_details_40")
+    if apple_price:
+        ap = apple_price.get_text(strip=True)
+        print(ap)
+        wp2 = int(ap[11:13])
+        if(100<wp2>130):
+            print("purchase for today")
+        elif(wp2<100):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def cucumber():
+    cuc_url = "https://commodityonline.com/requirement/seller/kashmiri-apple-for-sale-in-central-delhi/128195"
+    cuc_response = requests.get(cuc_url, headers=headers)
+    soup = BeautifulSoup(cuc_response.content, "html.parser")
+    cuc_price = soup.find("div", class_="c_details_40")
+    if cuc_price:
+        cp = cuc_price.get_text(strip=True)
+        print(cp)
+        wp2 = int(cp[11:13])
+        if(10<wp2>30):
+            print("purchase for today")
+        elif(wp2<10):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def ladys_finger():
+    ldyfing_url = "https://commodityonline.com/requirement/seller/normal-cucumber-for-sale-in-satara/133638"
+    ldyfing_response = requests.get(ldyfing_url, headers=headers)
+    soup = BeautifulSoup(ldyfing_response.content, "html.parser")
+    ldyfing_price = soup.find("div", class_="c_details_40")
+    if ldyfing_price:
+        ldp = ldyfing_price.get_text(strip=True)
+        print(ldp)
+        wp2 = int(ldp[11:13])
+        if(20<wp2>30):
+            print("purchase for today")
+        elif(wp2<20):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def mushroom():
+    mush_url = "https://www.commodityonline.com/requirement/seller/normal-mushroom-for-sale-in-hardoi/91912"
+    mush_response = requests.get(mush_url, headers=headers)
+    soup = BeautifulSoup(mush_response.content, "html.parser")
+    mush_price = soup.find("div", class_="c_details_40")
+    if mush_price:
+        mup = mush_price.get_text(strip=True)
+        print(mup)
+        wp2 = int(mup[11:13])
+        if(120<wp2>180):
+            print("purchase for today")
+        elif(wp2<120):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def tomato():
+    tomo_url = "https://www.commodityonline.com/requirement/seller/normal-tomato-for-sale-in-golaghat/133528"
+    tomo_response = requests.get(tomo_url, headers=headers)
+    soup = BeautifulSoup(tomo_response.content, "html.parser")
+    tomo_price = soup.find("div", class_="c_details_40")
+    if tomo_price:
+        top = tomo_price.get_text(strip=True)
+        print(top)
+        wp2 = int(top[11:13])
+        if(20<wp2>40):
+            print("purchase for today")
+        elif(wp2<20):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def banana():
+    bana_url = "https://www.commodityonline.com/requirement/seller/poovan-banana-for-sale-in-cuddalore/133838"
+    bana_response = requests.get(bana_url, headers=headers)
+    soup = BeautifulSoup(bana_response.content, "html.parser")
+    bana_price = soup.find("div", class_="c_details_40")
+    if bana_price:
+        bap = bana_price.get_text(strip=True)
+        print(bap)
+        wp2 = int(bap[11:13])
+        if(30<wp2>50):
+            print("purchase for today")
+        elif(wp2<30):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def cinnamon():
+    cin_url = "https://www.commodityonline.com/requirement/seller/a-grade-quality-cinnamon-for-sale-in-karbi-anglong/106575"
+    cin_response = requests.get(cin_url, headers=headers)
+    soup = BeautifulSoup(cin_response.content, "html.parser")
+    cin_price = soup.find("div", class_="c_details_40")
+    if cin_price:
+        cinp = cin_price.get_text(strip=True)
+        print(cinp)
+        w1 = int(cinp[11:13])
+        if(200<w1>250):
+            print("Average price, good to purchase for today")
+        elif(w1<200):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+    else:
+        print("Not available")
+
+def onion():
+    oni_url = "https://www.commodityonline.com/requirement/seller/a-grade-quality-onion-for-sale-in-sonipat/131647"
+    oni_response = requests.get(oni_url, headers=headers)
+    soup = BeautifulSoup(oni_response.content, "html.parser")
+    oni_price = soup.find("div", class_="c_details_40")
+    if oni_price:
+        onip = oni_price.get_text(strip=True)
+        print(onip)
+        wp2 = int(onip[11:13])
+        if(30<wp2>50):
+            print("purchase for today")
+        elif(wp2<30):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def pepper():
+    pep_url = "https://commodityonline.com/requirement/seller/normal-pepper-for-sale-in-wayanad/128915"
+    pep_response = requests.get(pep_url, headers=headers)
+    soup = BeautifulSoup(pep_response.content, "html.parser")
+    pep_price = soup.find("div", class_="c_details_40")
+    if pep_price:
+        pepp = pep_price.get_text(strip=True)
+        print(pepp)
+        wp2 = int(pepp[11:13])
+        if(550<wp2>650):
+            print("purchase for today")
+        elif(wp2<550):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def cardamom():
+    card_url = "https://commodityonline.com/requirement/buyer/bulk-cardamom-required-in-gwalior/130692"
+    card_response = requests.get(card_url, headers=headers)
+    soup = BeautifulSoup(card_response.content, "html.parser")
+    card_price = soup.find("div", class_="c_details_40")
+    if card_price:
+        cardp = card_price.get_text(strip=True)
+        print(cardp)
+        wp2 = int(cardp[11:13])
+        if(1200<wp2>1800):
+            print("purchase for today")
+        elif(wp2<1200):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def must_oil():
+    must_oil_url = "https://commodityonline.com/requirement/seller/kachi-ghani-mustard-oil-for-sale-in-shivpuri/134165"
+    must_oil_response = requests.get(must_oil_url, headers=headers)
+    soup = BeautifulSoup(must_oil_response.content, "html.parser")
+    must_oil_price = soup.find("div", class_="c_details_40")
+    if must_oil_price:
+        mustp = must_oil_price.get_text(strip=True)
+        print(mustp)
+        wp2 = int(mustp[11:13])
+        if(150<wp2>180):
+            print("purchase for today")
+        elif(wp2<150):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def grdnut_oil():
+    grdnut_oil_url = "https://commodityonline.com/requirement/seller/peanut-groundnut-oil-for-sale-in-jamnagar/132624"
+    grdnut_oil_response = requests.get(grdnut_oil_url, headers=headers)
+    soup = BeautifulSoup(grdnut_oil_response.content, "html.parser")
+    grdnut_oil_price = soup.find("div", class_="c_details_40")
+    if grdnut_oil_price:
+        grdoilp = grdnut_oil_price.get_text(strip=True)
+        print(grdoilp)
+        wp2 = int(grdoilp[11:13])
+        if(150<wp2>200):
+            print("purchase for today")
+        elif(wp2<150):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def cashew():
+    cash_url = "https://commodityonline.com/requirement/seller/w-400-cashew-for-sale-in-dhenkanal/134107"
+    cash_response = requests.get(cash_url, headers=headers)
+    soup = BeautifulSoup(cash_response.content, "html.parser")
+    cash_price = soup.find("div", class_="c_details_40")
+    if cash_price:
+        cashp = cash_price.get_text(strip=True)
+        print(cashp)
+        w1=int(cashp[11:13])
+        if(600<w1>650):
+            print("purchase for today")
+        elif(w1<600):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def almond():
+    alm_url = "https://commodityonline.com/requirement/seller/american-almond-for-sale-in-thane/119710"
+    alm_response = requests.get(alm_url, headers=headers)
+    soup = BeautifulSoup(alm_response.content, "html.parser")
+    alm_price = soup.find("div", class_="c_details_40")
+    if alm_price:
+        almp = alm_price.get_text(strip=True)
+        print(almp)
+        w1=int(almp[11:13])
+        if(500<w1>550):
+            print("purchase for today")
+        elif(w1<500):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+def blacktea():
+    blktea_url = "https://commodityonline.com/requirement/seller/black-tea-for-sale-in-meerut/129759"
+    blktea_response = requests.get(blktea_url, headers=headers)
+    soup = BeautifulSoup(alm_response.content, "html.parser")
+    blktea_price = soup.find("div", class_="c_details_40")
+    if blktea_price:
+        blkteap = blktea_price.get_text(strip=True)
+        print(blkteap)
+        wp1=int(blkteap[11:13])
+        if(200<wp1>230):
+            print("purchase for today")
+        elif(wp1<20
+             0):
+            print("Hurray!,price is too low , good to purchase even for future requirements")
+        else:
+            print("Oops! price is too high, suggested to wait for few days")
+    else:
+        print("Not available")
+
+
+
+
+
+
+# Run all functions
+wheat()
+orange()
+apple()
+cucumber()
+ladys_finger()
+mushroom()
+tomato()
+banana()
+cinnamon()
+onion()
+pepper()
+cardamom()
+must_oil()
+grdnut_oil()
+cashew()
+blacktea()
